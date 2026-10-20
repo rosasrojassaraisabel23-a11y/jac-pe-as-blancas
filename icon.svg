@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<rect width="512" height="512" rx="100" fill="#164e3b"/>
+<path d="M256 65 295 176 412 176 317 245 353 358 256 289 159 358 195 245 100 176 217 176Z" fill="#d9b65d"/>
+<text x="256" y="435" text-anchor="middle" font-family="Arial,sans-serif" font-size="68" font-weight="bold" fill="#fff">JAC</text>
+</svg>

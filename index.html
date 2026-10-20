@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#164e3b">
+  <meta name="description" content="Información comunitaria de la Junta de Acción Comunal de la vereda Peñas Blancas, Quipile, Cundinamarca.">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <title>JAC Peñas Blancas</title>
+  <style>
+    :root{color-scheme:light;--green:#164e3b;--green2:#21664e;--cream:#f7f5ee;--gold:#d9b65d;--ink:#18352a;--muted:#66766d;--line:#dce4dc}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--cream);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink)}
+    header{background:var(--green);color:#fff;padding:25px 18px 22px;border-radius:0 0 22px 22px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .mark{width:52px;height:52px;border-radius:16px;background:var(--gold);display:grid;place-items:center;color:var(--green);font-weight:900;font-size:21px}
+    h1{font-size:22px;line-height:1.1;margin:0}
+    header p{margin:7px 0 0;color:#e5eee8;font-size:13px}
+    main{max-width:760px;margin:auto;padding:16px}
+    .welcome{padding:14px 2px 10px}
+    .welcome h2{font-size:20px;margin:0 0 5px}
+    .welcome p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:15px 0}
+    .tile{background:#fff;border:1px solid var(--line);border-radius:17px;padding:17px 14px;min-height:125px;text-align:left;color:var(--ink);font:inherit;box-shadow:0 3px 12px #153d2910}
+    .tile .emoji{font-size:27px;display:block;margin-bottom:10px}
+    .tile strong{display:block;font-size:15px}
+    .tile small{display:block;color:var(--muted);font-size:12px;margin-top:5px;line-height:1.35}
+    .panel{background:#fff;border:1px solid var(--line);border-radius:17px;padding:17px;margin:14px 0}
+    .panel h3{margin:0 0 10px;font-size:17px}
+    .panel p{font-size:14px;line-height:1.5;color:var(--muted);margin:5px 0}
+    .notice{border-left:4px solid var(--gold);padding:10px 12px;background:#fbf8ed;border-radius:8px;font-size:13px;line-height:1.45}
+    .back{border:0;background:var(--green);color:#fff;border-radius:11px;padding:10px 14px;font-weight:700;margin-bottom:10px}
+    .item{padding:12px 0;border-bottom:1px solid var(--line)}
+    .item:last-child{border-bottom:0}
+    .item strong{display:block;font-size:14px}
+    .item span{display:block;color:var(--muted);font-size:13px;margin-top:4px;line-height:1.4}
+    footer{text-align:center;color:var(--muted);font-size:12px;padding:12px 16px 25px}
+    .hidden{display:none!important}
+    @media(min-width:600px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="mark">PB</div>
+      <div>
+        <h1>JAC Peñas Blancas</h1>
+        <p>Vereda Peñas Blancas · Quipile, Cundinamarca</p>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section id="home">
+      <div class="welcome">
+        <h2>Información para nuestra comunidad</h2>
+        <p>Un espacio para consultar información y actividades de la Junta de Acción Comunal.</p>
+      </div>
+      <div class="grid">
+        <button class="tile" data-page="docs"><span class="emoji">📄</span><strong>Documentos y actas</strong><small>Consulta de documentos comunitarios</small></button>
+        <button class="tile" data-page="members"><span class="emoji">👥</span><strong>Integrantes de la JAC</strong><small>Conoce la junta directiva</small></button>
+        <button class="tile" data-page="meetings"><span class="emoji">🗓️</span><strong>Reuniones</strong><small>Fechas y convocatorias</small></button>
+        <button class="tile" data-page="notices"><span class="emoji">📢</span><strong>Avisos comunitarios</strong><small>Información importante</small></button>
+      </div>
+      <div class="panel">
+        <h3>Bienvenidos</h3>
+        <div class="notice">Esta es la primera versión de la aplicación. Los documentos, reuniones y avisos reales se agregarán cuando conectemos la base de datos de la JAC.</div>
+      </div>
+      <div class="panel">
+        <h3>Consulta pública</h3>
+        <p>Los visitantes podrán consultar la información publicada. La edición y administración deberán quedar restringidas a personas autorizadas.</p>
+      </div>
+    </section>
+    <section id="detail" class="hidden">
+      <button class="back" id="back">← Volver al inicio</button>
+      <div class="panel">
+        <h3 id="detail-title">Sección</h3>
+        <div id="detail-content"></div>
+      </div>
+    </section>
+  </main>
+  <footer>JAC Peñas Blancas · Comunidad, participación y territorio</footer>
+  <script>
+    const content = {
+      docs: {title:"Documentos y actas",items:[["Actas de reuniones","Los archivos oficiales estarán disponibles aquí cuando se conecte la base de datos."],["Documentos de la JAC","Se publicarán documentos aprobados para consulta comunitaria."]]},
+      members: {title:"Integrantes de la JAC",items:[["Presidencia","Información por confirmar y publicar por la JAC."],["Vicepresidencia","Información por confirmar y publicar por la JAC."],["Secretaría","Información por confirmar y publicar por la JAC."],["Tesorería","Información por confirmar y publicar por la JAC."],["Fiscalía y comisiones","Información por confirmar y publicar por la JAC."]]},
+      meetings: {title:"Reuniones",items:[["Próximas reuniones","Las fechas y convocatorias oficiales aparecerán aquí cuando se publiquen."],["Actas anteriores","Consulta de reuniones realizadas, según los documentos disponibles."]]},
+      notices: {title:"Avisos comunitarios",items:[["Información importante","Los avisos oficiales de la vereda aparecerán en esta sección."],["Actividades comunitarias","Se agregarán fechas, lugares y detalles de las actividades."]]}
+    };
+    const home=document.getElementById("home"), detail=document.getElementById("detail");
+    document.querySelectorAll("[data-page]").forEach(btn=>btn.addEventListener("click",()=>{
+      const section=content[btn.dataset.page]; document.getElementById("detail-title").textContent=section.title;
+      const container=document.getElementById("detail-content"); container.replaceChildren();
+      section.items.forEach(item=>{const div=document.createElement("div");div.className="item";const strong=document.createElement("strong");strong.textContent=item[0];const span=document.createElement("span");span.textContent=item[1];div.append(strong,span);container.append(div)});
+      home.classList.add("hidden");detail.classList.remove("hidden");window.scrollTo(0,0);
+    }));
+    document.getElementById("back").addEventListener("click",()=>{detail.classList.add("hidden");home.classList.remove("hidden");window.scrollTo(0,0)});
+    if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}))}
+  </script>
+</body>
+</html>

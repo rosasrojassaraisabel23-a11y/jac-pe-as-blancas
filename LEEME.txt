@@ -1,0 +1,12 @@
+JAC PEÑAS BLANCAS — PROTOTIPO PWA
+
+Archivos:
+- index.html: interfaz de la aplicación.
+- manifest.json: datos para instalación como aplicación web.
+- sw.js: caché básica para funcionamiento limitado sin conexión.
+- icon.svg: icono de la aplicación.
+
+IMPORTANTE:
+Esta es una maqueta inicial. No está conectada a Supabase y contiene solo textos de ejemplo.
+Antes de publicar información real, configurar permisos de solo lectura para visitantes y permisos administrativos restringidos en Supabase (RLS).
+Nunca incluir claves secretas de Supabase en estos archivos.
